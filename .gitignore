@@ -1,0 +1,31 @@
+# Secrets
+.env
+
+# Data / model caches
+data/cache/
+*.parquet
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Notebook outputs (keep skeleton clean; comment out if you want outputs tracked)
+# notebooks/*.ipynb
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Artefacts
+outputs/
+*.png
+!docs/**/*.png

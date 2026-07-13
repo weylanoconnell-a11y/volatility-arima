@@ -1,0 +1,31 @@
+# --- Core data & numerics ---
+pandas>=2.2,<3.0
+numpy>=1.26               # numpy 2.x supported (order search runs on statsmodels)
+pyarrow>=15.0             # Parquet engine for the on-disk cache
+
+# --- Market data providers ---
+# Default provider is yfinance (NO API key required) -> the project runs out of the box.
+yfinance>=0.2.40
+requests>=2.31            # used by the Financial Modeling Prep (FMP) provider
+# Optional: only needed if you set APP_DATA_PROVIDER=alpaca
+alpaca-py>=0.33,<1.0       # modern Alpaca SDK (replaces legacy alpaca-trade-api)
+
+# --- Time-series modelling ---
+statsmodels>=0.14         # ARIMA + ADF/Ljung-Box; the auto_arima search is built on this
+# NOTE: pmdarima is intentionally NOT used — it requires numpy<2 and has no
+# Python 3.13 wheels. Order selection is implemented on statsmodels in src/model.py.
+
+# --- Configuration ---
+pydantic>=2.6,<3.0
+pydantic-settings>=2.2,<3.0
+
+# --- Visualisation ---
+matplotlib>=3.8,<4.0
+
+# --- Notebook / tooling (optional but recommended) ---
+jupyter>=1.0
+ipykernel>=6.29
+
+# --- Dev quality (optional) ---
+ruff>=0.4
+mypy>=1.10
